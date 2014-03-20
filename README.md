@@ -23,8 +23,8 @@ Sending 5 requests for http://localhost:8080/test/postgres/...
 	@  5.05s got response [200]
 	@  5.05s got response [200]
 	=  5.06s TOTAL
-------------------------------------------
 SUM TOTAL = 5.06s
+
 
 注意：
 1.config.py 中需要修改测试数据库的用户名和密码，并且可以修改pool_size的数量；
@@ -65,7 +65,7 @@ Sending 30 requests for http://localhost:8080/test/postgres/...
 	@ 10.25s got response [200]
 	@ 10.26s got response [200]
 	= 10.28s TOTAL
-------------------------------------------
 SUM TOTAL = 10.28s
+
 
 这是因为 连接数 》SQLALCHEMY_POOL_SIZE + SQLALCHEMY_MAX_OVERFLOW ，我们可以通过一些设置来避免这种情况（NullPool ），但是实际上 postgresql 规定了最大连接数，这个是无法避免的，因此上述的设置最好不要使用
