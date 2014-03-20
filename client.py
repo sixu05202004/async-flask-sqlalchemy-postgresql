@@ -10,8 +10,6 @@ import urllib2
 
 
 def fetch_url(url):
-    """ Fetch a URL and return the total amount of time required.
-    """
     t0 = time.time()
     try:
         resp = urllib2.urlopen(url)
@@ -25,9 +23,6 @@ def fetch_url(url):
 
 
 def time_fetch_urls(url, num_jobs):
-    """ Fetch a URL `num_jobs` times in parallel and return the
-        total amount of time required.
-    """
     print("Sending %d requests for %s..." % (num_jobs, url))
     t0 = time.time()
     jobs = [gevent.spawn(fetch_url, url) for i in range(num_jobs)]
@@ -42,9 +37,7 @@ if __name__ == '__main__':
     try:
         num_requests = int(sys.argv[1])
     except IndexError:
-        num_requests = 5
+        num_requests = 10
 
     t1 = time_fetch_urls("http://localhost:8080/test/postgres/", num_requests)
-
-    print("------------------------------------------")
     print("SUM TOTAL = %.2fs" % t1)
