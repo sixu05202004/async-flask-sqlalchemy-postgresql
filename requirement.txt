@@ -1,0 +1,5 @@
+Flask 
+Flask-SQLAlchemy
+psycopg2
+psycogreen
+gevent
