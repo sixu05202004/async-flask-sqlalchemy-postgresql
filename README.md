@@ -13,7 +13,7 @@ async-flask-sqlalchemy-postgresql
 
 4.运行 Python app.py 来启动服务器，运行 python client 来测试
 
-结果如下：
+结果如下:
 
 localhost:async-flask-sqlalchemy-postgresql sixu05202004$ python client.py
 Sending 5 requests for http://localhost:8080/test/postgres/...
@@ -30,7 +30,7 @@ SUM TOTAL = 5.06s
 1.config.py 中需要修改测试数据库的用户名和密码，并且可以修改pool_size的数量；
 2.python client.py num,比如：python client.py 100可以用来模拟更多的连接；
 3.如果python client.py num中得num数大于config.py中的SQLALCHEMY_POOL_SIZE = 100时候，我们会发现有些数据库连接又存在阻塞的情况。
-比如，我们把SQLALCHEMY_POOL_SIZE改成10，使用python client.py 30来测试，结果如下：
+比如，我们把SQLALCHEMY_POOL_SIZE改成10，使用python client.py 30来测试，结果如下:
 
 localhost:async-flask-sqlalchemy-postgresql sixu05202004$ python client.py 30
 Sending 30 requests for http://localhost:8080/test/postgres/...
