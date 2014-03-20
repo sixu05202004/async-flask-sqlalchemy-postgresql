@@ -44,11 +44,7 @@ if __name__ == '__main__':
     except IndexError:
         num_requests = 5
 
-    # Fetch the URL that blocks with a `time.sleep`
-    t0 = time_fetch_urls("http://localhost:8000/sleep/python/", num_requests)
-
-    # Fetch the URL that blocks with a `pg_sleep`
-    t1 = time_fetch_urls("http://localhost:8000/sleep/postgres/", num_requests)
+    t1 = time_fetch_urls("http://localhost:8080/test/postgres/", num_requests)
 
     print("------------------------------------------")
-    print("SUM TOTAL = %.2fs" % (t0 + t1))
+    print("SUM TOTAL = %.2fs" % t1)
