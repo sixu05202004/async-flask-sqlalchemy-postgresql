@@ -3,16 +3,15 @@ async-flask-sqlalchemy-postgresql
 
 异步的数据库连接(postgresql)示例
 
-1.安装所需的插件::
+* 安装所需的插件:
 
 	pip install -r requirements.txt
 
+* 需要在postgresql中创建数据库 test_asyn 
 
-2. 需要在postgresql中创建数据库 test_asyn 
+* 运行 python app.py -c 用来创建测试的表；
 
-3. 运行 python app.py -c 用来创建测试的表；
-
-4.运行 Python app.py 来启动服务器，运行 python client 来测试
+* 运行 Python app.py 来启动服务器，运行 python client 来测试
 
 结果如下:
 
